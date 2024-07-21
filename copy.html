@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="./public/css/index.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <div class="main">
+    <!-- 鼠标指针 -->
+    <div id="g-pointer-1"></div>
+    <div id="g-pointer-2"></div>
+    <script src="./public/api/mousemove.js"></script>
+
+    <!-- 头像与用户名 -->
+    <div class="info">
+      <div class="info_child">
+        <img id="avatar" src="#">
+        <div class="img-title">
+          <span id="Name" class="img-title-text"></span>
+        </div>
+        <script src="./public/api/Info.js"></script>
+        <script>info()</script>
+      </div>
+    </div>
+    <!--主体-->
+    <div class="container">
+      <!--左部盒子-->
+      <div class="lside">
+        <!-- <h2>我是左边栏</h2> -->
+        <div class="ysa_l">
+          <div class="box1_l">
+            <!-- 留言栏 -->
+            <div class="message">每日一签</div>
+            <div class="message_content">
+              <p><span id="son"></span></p><br>
+              <p><span id="resource"></span></p>
+              <script src="./public/api/message.js"></script>
+              <!-- 不能在引用时候使用函数，因为会先使用再引用 -->
+              <script>message()</script>
+            </div>
+            <!-- <img class="pic1" src="https://cdn2.flowus.cn/oss/877296fb-5e9f-478f-8155-f0e4aaf5d3b6/5d9eb59b1a0436a05f0006c5_reading-side.svg?time=1720944000&token=0c24ad8a9825333c0cb1e2c1589c3fbdd269904ad907d1c28f68bf1242d69c2d&role=free" /> -->
+
+            <!-- 心情趋势栏 -->
+            <form id="mood_choice">
+              <p>今日心情：</p>
+              <select id="mood_value" name="mood_value">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+              </select>
+              <button type="submit" id="mood_record">记录</button>
+              <script src="./public/api/mood_redcord.js"></script>
+              <script>mood_record()</script>
+            </form>
+            <div class="mood">心情变化</div>
+            <div class="mood_graph" id="mood_graph">
+
+            </div>
+            
+
+            <!-- 漂流瓶栏 -->
+            <div class="bottles">
+              <div class="title">漂流瓶</div>
+              <div class="content">
+              <div class="pick">捡拾</div>
+              <div class="bottle" id="bottle">
+
+              </div>
+              <script src="./public/api/pick.js"></script>
+              <script>pick()</script>
+              <hr>
+              <hr>
+              <div class="throw">漂流</div>
+              <div class="bottle">
+                <button type="submit" id="throw">+</button>
+                <script src="./public/api/throw.js"></script>
+              </div>
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--右部盒子-->
+      <div class="rside">
+        <!-- <h2>我是右边栏</h2> -->
+        <div class="ysa_r">
+          <div class="box1_r">
+            <!-- 日记栏 -->
+            <div class="diary">
+              <div class="title">日记概览</div>
+              <hr>
+              <hr>
+              <script src="./public/api/diary.js"></script>
+              <script>diary()</script>
+              <table class="content" id="table">
+                
+              </table>
+              <button  id="record">记录</button>
+              <script src="./public/api/write.js"></script>
+              <script>write()</script>
+            </div>
+
+            <!-- 日历打卡 -->
+            <div class="calendar">
+              <div class="title">日历打卡</div>
+              <div id="calendar" class="calendar_table">
+
+              </div>
+              <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.15/index.global.min.js'></script>
+              <script src="./public/api/calendar.js"></script>
+            </div>
+          </div>  
+      </div>
+  </div>
+  
+  <!--底部-->
+  <!-- <div class="footer">
+    <div>
+      
+    </div>
+    <hr>
+  </div> -->
+  <script type="module" src="./public/api/Echarts.js"></script>
+  <!-- 非常重要的一点：必须在DOM容器加载完毕才能引入自定义文件 -->
+</body>
+</html>

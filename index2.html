@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page 2</title>
+    <!-- jQuery -->
+    <script src="https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-y/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="./public/css/index2.css">
+    <!-- 样式 -->
+    <!-- HarmonyOS Sans -->
+    <link rel="stylesheet" href="https://s1.hdslb.com/bfs/static/jinkela/long/font/regular.css" />
+    <link rel="stylesheet" type="text/css" href="https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-y/bootstrap/5.1.0/css/bootstrap.min.css">
+    <!-- Izitoast -->
+    <link rel="stylesheet" href="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-y/izitoast/1.4.0/css/iziToast.min.css">
+    <script type="text/javascript" src="https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-y/izitoast/1.4.0/js/iziToast.min.js">
+    </script>
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+    <!-- Aplayer -->
+    <link rel="stylesheet" href="https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-y/aplayer/1.10.1/APlayer.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./public/css/mobile.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-y/aplayer/1.10.1/APlayer.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+
+<body>
+    <script>
+        let hasScrolled = false;
+        window.addEventListener('wheel', (event) => {
+            if (event.deltaY < 0 && !hasScrolled) { // 向上滚动
+                hasScrolled = true;
+                window.location.href = './index.html';
+            }
+        });
+    </script>
+    <section id="section" class="section">
+        <!-- 鼠标指针 -->
+        <div id="g-pointer-1"></div>
+        <div id="g-pointer-2"></div>
+        <script src="./public/api/mousemove.js"></script>
+        <!-- 主体内容 -->
+        <main id="main" class="main">
+            <div class="container" id="container">
+                <div class="row" id="row">
+                    <div class="col left">
+                        <div class="main-left">
+                            <!-- 分割线 -->
+                            <div class="line">
+                                <i class="fa-solid fa-link"></i>
+                                <span class="line-text">日历打卡</span>
+                            </div>
+                            <div class="cards calendar">
+                                <div id="calendar">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col right">
+                        <div class="main-right">
+                            <!-- 分割线 -->
+                            <div class="line">
+                                <i class="fa-solid fa-link"></i>
+                                <span class="line-text">漂流瓶</span>
+                            </div>
+                            <!-- 漂流瓶 -->
+                            <div class="row rightone" id="rightone">
+                                <div class="pick cards">
+                                    <table class="bottle" id="bottle">
+                                        <!-- 第一组 -->
+                                        <tr class="rowt">
+                                            <th class="colt">
+                                                <div class="link-card cards">
+                                                    <div class="message">Content1</div>
+                                                    <div class="date">Date1</div>
+                                                </div>
+                                            </th>
+                                            <th class="colt">
+                                                <div class="link-card cards">
+                                                    <div class="message">Content 2
+                                                    </div>
+                                                    <div class="date">Date 2
+                                                    </div>
+                                                </div>
+                                            </th>
+                                            <th class="colt">
+                                                <div class="link-card cards">
+                                                    <div class="message">Content 3
+                                                    </div>
+                                                    <div class="date">Date 3
+                                                    </div>
+                                                </div>
+                                            </th>
+                                        </tr>
+                                        <!-- 第二组 -->
+                                        <tr class="rowt">
+                                            <th class="colt">
+                                                <div class="link-card cards">
+                                                    <div class="message">Content 4
+                                                    </div>
+                                                    <div class="date">Date 4
+                                                    </div>
+                                                </div>
+                                            </th>
+                                            <th class="colt">
+                                                <div class="link-card cards">
+                                                    <div class="message">Content 5
+                                                    </div>
+                                                    <div class="date">Date 5
+                                                    </div>
+                                                </div>
+                                            </th>
+                                            <th class="colt">
+                                                <div class="link-card cards">
+                                                    <div id="throw" class="add">去漂流+</div>
+                                                    <script src="./public/api/throw.js"></script>
+                                                </div>
+                                            </th>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <script src="./public/api/pick.js"></script>
+                                <div class="throw cards">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </section>
+    <!-- 版权信息 -->
+    <footer id="footer" class="fixed-bottom footer">
+        <!-- 以下信息请不要修改哦 -->
+        ⚙Modified from&nbsp;<a href="/" target="_blank">imsyy</a> 🔒
+        <!-- <a href="https://beian.miit.gov.cn/">暂未备案</a> -->
+    </footer>
+    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.15/index.global.min.js'></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+
+            //获取用户名
+            var Name = localStorage.getItem("Name");
+            var date = []
+                //获取日记记录
+                //使用表单方便解析
+            var formData = new FormData();
+            formData.append("Name", Name);
+            fetch("http://localhost:3000/get_all_diary", {
+                    method: "POST",
+                    body: formData,
+                })
+                .then((res) => res.json())
+                .then((data) => {
+                    data.forEach(element => {
+                        date.push(element.date)
+                    });
+                    console.log(date)
+                    var calendarEl = document.getElementById("calendar");
+
+                    var events = date.map(function(date) {
+                        return {
+                            title: '日记记录',
+                            start: date
+                        };
+                    });
+
+                    var calendar = new FullCalendar.Calendar(calendarEl, {
+                        initialView: "dayGridMonth",
+                        events: events,
+                        eventContent: function(arg) {
+                            if (arg.event.title === '日记记录') {
+                                return {
+                                    html: '<div class="custom-event-dot"><div class="event"></div></div>'
+                                };
+                            }
+                        }
+                    });
+
+                    calendar.render();
+                });
+        });
+    </script>
+    <link href="https://unpkg.com/@fullcalendar/core/main.css" rel="stylesheet" />
+    <link href="https://unpkg.com/@fullcalendar/daygrid/main.css" rel="stylesheet" />
+    <style>
+        .calendar {
+            width: 500px;
+            /* 容器宽度为视口宽度 */
+            height: 400px;
+            /* 设置容器高度 */
+            overflow-x: auto;
+            /* 显示横向滚动条 */
+            overflow-y: auto;
+            /* 隐藏垂直滚动条 */
+            display: flex;
+            justify-content: center;
+            /* 居中日历 */
+        }
+        /* 设置整个日历背景和文字颜色为白色 */
+        
+        .fc {
+            /* background-color: #ffffff; 日历背景色 */
+            color: #fff;
+            /* 日历文字颜色 */
+            width: 400px;
+            /* 调整日历宽度 */
+            height: 400px;
+            /* 调整日历高度 */
+            margin: 0 auto;
+            /* 居中日历 */
+        }
+        /* 设置头部和按钮的背景和文字颜色 */
+        
+        .fc-toolbar {
+            /* background-color: #ffffff; 头部背景色 */
+            color: #ffffff;
+            /* 头部文字颜色 */
+            height: 30px;
+        }
+        
+        .fc-button {
+            background-color: #ffffff;
+            /* 按钮背景色 */
+            color: #ffffff;
+            /* 按钮文字颜色 */
+            border: none;
+            /* 移除按钮边框 */
+        }
+        
+        .fc-button:hover {
+            background-color: #f0f0f0;
+            /* 按钮悬停背景色 */
+        }
+        /* 设置事件的背景和文字颜色 */
+        
+        .fc-event {
+            /* background-color: #ffffff; 事件背景色 */
+            color: #000000;
+            /* 事件文字颜色 */
+        }
+        
+        .fc .fc-daygrid-day-number,
+        .fc .fc-daygrid-day-top,
+        .fc .fc-daygrid-event,
+        .fc .fc-daygrid-event-dot,
+        .fc .fc-daygrid-event-title,
+        .fc .fc-daygrid-block-event .fc-event-title {
+            color: #ffffff;
+            /* 文字颜色 */
+            text-decoration: none;
+            /* 移除下划线 */
+        }
+        /* 设置星期的文字颜色为白色，去掉下划线 */
+        
+        .fc .fc-daygrid-day-top {
+            color: #ffffff;
+            /* 星期文字颜色 */
+            text-decoration: none;
+            /* 去掉下划线 */
+        }
+        
+        .fc .fc-daygrid-day-top .fc-daygrid-day-name {
+            color: #ffffff;
+            /* 星期文字颜色 */
+            text-decoration: none;
+            /* 去掉下划线 */
+        }
+        /* 自定义事件内容样式 */
+        
+        .custom-event-dot {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .event {
+            width: 8px;
+            height: 8px;
+            background-color: #ffffff;
+            border-radius: 50%;
+        }
+    </style>
+</body>
+
+</html>

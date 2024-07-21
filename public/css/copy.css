@@ -1,0 +1,437 @@
+/* 主色调 */
+.color{
+    background-color: #ebf4eb;
+    background-color: #c1ccbb;
+    background-color: #b6cb81;
+    background-color: #f5f8d4;
+    background-color: #c6cce5;
+    background-color: #7882ac;
+    background-color: #8d9fa9;
+    background-color: #4e5c5f;
+    background-color: #7c979d;
+    background-color: #98b0b3;
+    background-color: #c4c7c6;
+    background-color: #dcdfd8;
+    background-color:#24374a;
+    background-color:#3a4f6a;
+    background-color:#516f76;
+    background-color:#5a6e89;
+    background-color:#b1c3cf;
+    background-color:#dbe9f3;
+  }
+  *{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+  }
+  .main{
+    /*水平居中*/
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background: url("../images/bk6.jpg") no-repeat center center fixed;
+    /*兼容浏览器版本*/
+    -webkit-background-size: cover;
+    -o-background-size: cover;                
+    background-size: cover;
+  }
+  /*鼠标样式*/
+  #g-pointer-1 {
+    display: none;
+  }
+  
+  #g-pointer-2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 18px;
+    height: 18px;
+    transition: 0.05s linear;
+    pointer-events: none;
+    background: #ffffff40;
+    border-radius: 50%;
+    z-index: 9999999;
+  }
+  
+  .header,.nav,.container,.footer{
+    /*左浮动*/
+    float: left;
+    /*占满浏览器*/
+    width: 100%;
+    /* 内边际影响盒子实际大小，处理 */
+    box-sizing: border-box;
+  }
+  /*.header{
+    position: absolute;
+    height: 600px;
+    background-image: url("../images/bk3.jpg");
+    background-size: cover;
+  }*/
+  /* 个人信息 */
+  .info{
+    position: relative;
+    /* 宽高 */
+    width: 50%;
+    height: 120px;
+    /* 边距 */
+    margin-top: 50px;
+    margin-left: 25%;
+    /* 边框线 */
+    border: none;
+  }
+  .info_child{
+    /* 边距 */
+    margin-left: 9%;
+    margin-right: 3%;
+    /* 边框 */
+    border: 1px solid #fff;
+    border-radius: 5px 5px 5px 5px;
+    /* 子元素排列 */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  /* 头像 */
+  .info img{
+    position: relative;
+    /* 宽高 */
+    width: 120px;
+    height: 120px;
+    /* 边框线 */
+    border-radius: 50%;
+    /* border:  1px #fff solid  */
+  }
+  /* 昵称 */
+  .info h2{
+    position: relative;
+    margin-left: 30px;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  
+  
+  /* 内容部分 */
+  .container{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    /* 背景 */
+    /* background-color: #c3d0e2; */
+  }
+  
+  .lside{
+    width: 40%;
+    height: 100%;
+    /* 边距 */
+    margin-top: 10px;
+    float: left;
+  }
+  .rside{
+    width: 60%;
+    height: 100%;
+    /* 边距 */
+    margin-top: 10px;
+  }
+  /* 防止太接近边框 */
+  .lside,.rside{
+    padding: 5px;
+    /*去掉内边际影响*/
+    box-sizing: border-box;
+  }
+  /* 当浏览宽度小于700，两个栏进行竖排 */
+  @media screen and (max-width:700px){
+    .lside,.rside{
+      width: 100%;
+      /* 原来设定了中间栏左右边距需要去掉 */
+      margin: 0px;
+    }
+  }
+  
+  /* 左圆角边框 */
+  .ysa_l{
+    position: relative;
+    border: 1px solid #ccc;
+    border-radius: 3px 3px 3px 3px;
+    margin-left: 8%;
+    margin-right: 2%;
+    height: auto;
+    /* 边框阴影 */
+    box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.05);
+    /* 子内容居中 */
+    justify-content: center;
+  }
+  /* 左白盒子 */
+  .box1_l{
+    position: relative;
+    /* 宽高 */
+    width: 92%;
+    height: 80%;
+    /* 边距 */
+    margin-top: 40px;
+    margin-left: 4%;
+    /* 背景 */
+    background-color: #fff;
+    /* 边框线 */
+    border-radius:  3px 3px 3px 3px;
+    /* 子元素排列 */
+    display: flex;
+    flex-direction: column;
+  }
+  /* 留言栏 */
+  .message{
+    position: relative;
+    /* 宽高 */
+    width: 92%;
+    height: 30px;
+    /* 边距 */
+    padding-left: 4%;
+    padding-right: 4%;
+    /* 边框线 */
+    border: #ccc solid 1px;
+    border-radius: 3px 3px 3px 3px;
+    /* 子元素排列 */
+    align-items: center;
+    justify-content: center;
+  }
+  /* 留言内容 */
+  .message_content{
+    position: relative;
+    /* 宽高 */
+    width: 92%;
+    height: 60px;
+    /* 边距 */
+    padding-left: 4%;
+    padding-right: 4%;
+    margin-top: 20px;
+    /* 边框线 */
+    border: #ccc solid 1px;
+    border-radius: 3px 3px 3px 3px;
+    /* 子元素排列 */
+    align-items: center;
+    justify-content: center;
+  }
+  .pic1{
+    position: relative;
+    /* 宽高 */
+    width: 92%;
+    height: 200px;
+    /* 边距 */
+    padding-left: 4%;
+    padding-right: 4%;
+    /* 边框线 */
+    /* border: #ccc solid 1px; */
+    /* border-radius: 3px 3px 3px 3px; */
+  }
+  /* 心情趋势 */
+  #mood_choice{
+    position: relative;
+    /* 边距 */
+    margin-top: 60px;
+    margin-left: 10px;
+    /* 子元素排列 */
+    display: flex;
+    flex-direction: row;
+  }
+  .mood{
+    position: relative;
+    /* 宽高 */
+    width: 92%;
+    height: 30px;
+    /* 边距 */
+    padding-left: 4%;
+    padding-right: 4%;
+    /* 边框线 */
+    border: #ccc solid 1px;
+    border-radius: 3px 3px 3px 3px;
+    /* 子元素排列 */
+    align-items: center;
+    justify-content: center;
+  }
+  .mood_graph{
+    position: relative;
+    /* 宽高 */
+    width: 92%;
+    height: 300px;
+    /* 边距 */
+    padding-left: 4%;
+    padding-right: 4%;
+    margin-top: 20px;
+    /* 边框线 */
+    border: #ccc solid 1px;
+    border-radius: 3px 3px 3px 3px;
+    /* 子元素排列 */
+    align-items: center;
+    justify-content: center;
+  }
+  /* 漂流瓶栏 */
+  .bottles .title{
+    position: relative;
+    /* 宽高 */
+    width: 92%;
+    height: 30px;
+    /* 边距 */
+    padding-left: 4%;
+    padding-right: 4%;
+    margin-top: 20px;
+    /* 边框线 */
+    border: #ccc solid 1px;
+    border-radius: 3px 3px 3px 3px;
+    /* 子元素排列 */
+    align-items: center;
+    justify-content: center;
+  }
+  .bottles hr{
+    position: relative;
+    /* 宽高 */
+    width: 92%;
+    /* 边距 */
+    padding-left: 4%;
+    padding-right: 4%;
+    margin-top: 20px;
+    /* 边框线 */
+    border: #ccc solid 1px;
+  }
+  .bottles .pick{
+    position: relative;
+    /* 宽高 */
+    width: 92%;
+    height: 300px;
+    /* 边距 */
+    padding-left: 4%;
+    padding-right: 4%;
+    margin-top: 20px;
+    /* 边框线 */
+    border: #ccc solid 1px;
+    border-radius: 3px 3px 3px 3px;
+    /* 子元素排列 */
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .bottles .throw{
+    position: relative;
+    /* 宽高 */
+    width: 92%;
+    height: 30px;
+    /* 边距 */
+    padding-left: 4%;
+    padding-right: 4%;
+    margin-top: 20px;
+    /* 边框线 */
+    border: #ccc solid 1px;
+    border-radius: 3px 3px 3px 3px;
+    /* 子元素排列 */
+    align-items: center;
+    justify-content: center;
+  }
+  button{
+    position: relative;
+    /* 宽高 */
+    width: 30%;
+    height: 30px;
+    /* 边距 */
+    margin-left: 35%;
+    margin-top: 10px;
+    /* 边框线 */
+    border: #ccc solid 1px;
+    border-radius: 3px 3px 3px 3px;
+  }
+  
+  
+  
+  /* 右圆角边框 */
+  .ysa_r{
+    position: relative;
+    text-align: center;
+    height: 1200px;
+    margin-left: 2%;
+    margin-right: 8%;
+    border: 1px solid #ccc;
+    border-radius: 3px 3px 3px 3px;
+    /* 边框阴影 */
+    box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.05);
+  }
+  /* 右侧白盒子 */
+  .box1_r{
+    position: relative;
+    /* 宽高 */
+    width: 92%;
+    height: 90%;
+    /* 边距 */
+    margin-top: 40px;
+    margin-left: 4%;
+    /* 背景 */
+    background-color: #fff;
+    /* 边框线 */
+    border-radius:  3px 3px 3px 3px;
+    /* 子元素排列 */
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* 日记栏 */
+  .diary .title{
+    position: relative;
+    /* 宽高 */
+    width: 92%;
+    height: 30px;
+    /* 边距 */
+    padding-left: 4%;
+    padding-right: 4%;
+    margin-top: 20px;
+    /* 边框线 */
+    border: #ccc solid 1px;
+    border-radius: 3px 3px 3px 3px;
+    /* 子元素排列 */
+    align-items: center;
+    justify-content: center;
+  }
+  .diary hr{
+    position: relative;
+    /* 宽高 */
+    width: 92%;
+    /* 边距 */
+    padding-left: 4%;
+    padding-right: 4%;
+    margin-top: 20px;
+    /* 边框线 */
+    border: #ccc solid 1px;
+  }
+  .diary .content{
+    position: relative;
+    /* 宽高 */
+    width: 92%;
+    height: 300px;
+    /* 边距 */
+    padding-left: 4%;
+    padding-right: 4%;
+    margin-top: 20px;
+    /* 边框线 */
+    border: #ccc solid 1px;
+    border-radius: 3px 3px 3px 3px;
+    /* 子元素排列 */
+    align-items: center;
+    justify-content: center;
+  }
+  /* 日历打卡栏 */
+  .calendar .title{
+    position: relative;
+    /* 宽高 */
+    width: 92%;
+    height: 30px;
+    /* 边距 */
+    padding-left: 4%;
+    padding-right: 4%;
+    margin-top: 20px;
+    /* 边框线 */
+    border: #ccc solid 1px;
+    border-radius: 3px 3px 3px 3px;
+    /* 子元素排列 */
+    align-items: center;
+    justify-content: center;
+  }
+  
+  

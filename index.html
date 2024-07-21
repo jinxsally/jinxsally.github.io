@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href="./public/css/index.css" rel="stylesheet" type="text/css" />
+    <link href="./public/css/mobile.css" rel="stylesheet" type="text/css" />
+    <!-- Bootstrap框架 -->
+    <link rel="stylesheet" type="text/css" href="https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-y/bootstrap/5.1.0/css/bootstrap.min.css" />
+    <!-- 字体 -->
+    <link rel="stylesheet" href="https://s1.hdslb.com/bfs/static/jinkela/long/font/regular.css" />
+    <link rel="stylesheet" href="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-y/izitoast/1.4.0/css/iziToast.min.css" />
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.1.2/css/all.min.css" />
+    <!-- Aplayer -->
+    <link rel="stylesheet" href="https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-y/aplayer/1.10.1/APlayer.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-y/aplayer/1.10.1/APlayer.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- 引入 jQuery 库 -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Izitoast -->
+    <link rel="stylesheet" href="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-y/izitoast/1.4.0/css/iziToast.min.css" />
+    <script type="text/javascript" src="https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-y/izitoast/1.4.0/js/iziToast.min.js">
+    </script>
+    <!-- 滚动 -->
+    <script src="./public/api/roll.js"></script>
+</head>
+
+<body>
+    <section id="section" class="section">
+        <div class="main" id="main">
+
+            <!-- 鼠标指针 -->
+            <div id="g-pointer-1"></div>
+            <div id="g-pointer-2"></div>
+            <script src="./public/api/mousemove.js"></script>
+
+            <div class="container" id="container">
+                <div class="row" id="row">
+                    <!-- 头像与用户名 -->
+                    <div class="info">
+                        <img id="avatar" src="#" />
+                        <div class="img-title">
+                            <span id="Name" class="img-title-text"></span>
+                        </div>
+                        <script src="./public/api/Info.js"></script>
+                        <script>
+                            info()
+                        </script>
+                    </div>
+                    <div class="col left">
+                        <div class="main-left">
+                            <!-- 心情变化趋势 -->
+                            <div class="mood cards" id="mood">
+                                <form id="mood_choice">
+                                    <p>今日心情：</p>
+                                    <select id="mood_value" name="mood_value">
+                                            <option value="0">0</option>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                            <option value="6">6</option>
+                                            <option value="7">7</option>
+                                            <option value="8">8</option>
+                                            <option value="9">9</option>
+                                            <option value="10">10</option>
+                                        </select>
+                                    <button type="submit" id="mood_record">记录</button>
+                                    <script src="./public/api/mood_redcord.js">
+                                    </script>
+                                    <script>
+                                        mood_record()
+                                    </script>
+                                </form>
+                                <div class="mood_title">心情变化</div>
+                                <div class="mood_graph" id="mood_graph">
+
+                                </div>
+                                <script type="module" src="./public/api/Echarts.js"></script>
+                            </div>
+
+                            <!-- 音乐 -->
+                            <div class="music cards" id="music">
+                                <div class="music-all">
+                                    <div class="music-control">
+                                        <i class="fa-solid fa-backward-step" id="last"></i>
+                                        <div id="play">
+                                            <i class="fa-solid fa-play"></i>
+                                        </div>
+                                        <i class="fa-solid fa-forward-step" id="next"></i>
+                                    </div>
+                                    <div class="music-menu">
+                                        <div class="music-text">
+                                            <span id="music-name">未播放音乐</span>
+                                        </div>
+                                        <div class="music-volume" style="display: none;">
+                                            <div id="volume-ico">
+                                                <i class="fa-solid fa-volume-low"></i>
+                                            </div>
+                                            <input type="range" min="0" max="1" step="0.01" id="volume">
+                                            <div id="aplayer">
+                                                <span>音乐播放器加载失败</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 社交链接 -->
+                            <div class="social" id="social">
+                                <a href="https://github.com/" class="link" id="github" style="margin-left: 4px" target="_blank">
+                                    <i class="fa-brands fa-github"></i>
+                                </a>
+                                <a href="https://wpa.qq.com/" class="link" id="qq" target="_blank">
+                                    <i class="fa-brands fa-qq"></i>
+                                </a>
+                                <a href="#" class="link" id="email">
+                                    <i class="fa-solid fa-envelope"></i>
+                                </a>
+                                <a href="https://space.bilibili.com/" class="link" id="bilibili" target="_blank">
+                                    <i class="fa-brands fa-bilibili"></i>
+                                </a>
+                                <a href="https://m.weibo.cn/" class="link" id="telegram" target="_blank">
+                                    <i class="fa-brands fa-weibo"></i>
+                                </a>
+                                <a id="link-text">分享</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!--第二屏 Logo-->
+                    <div class="logo cards" style="display: none" id="changemore">
+                        <a class="logo-text" id="logo-text-small">imsyy.top</a>
+                    </div>
+                    <div class="col right">
+                        <div class="main-right">
+                            <!-- 功能区 -->
+                            <div class="row rightone" id="rightone">
+                                <div class="col hitokotos">
+                                    <!-- 一言 -->
+                                    <div class="hitokoto cards" id="hitokoto">
+                                        <div class="hitokoto-all">
+                                            <div class="hitokoto-text"><span id="hitokoto_text"></span>
+                                            </div>
+                                            <div class="hitokoto-from">-「&nbsp;<span id="from_text"></span>&nbsp;」
+                                            </div>
+                                            <script src="./public/api/message.js"></script>
+                                            <script>
+                                                message()
+                                            </script>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col times">
+                                    <!-- 时间 -->
+                                    <div class="time cards">
+                                        <div class="timeshow" id="time">
+                                            2000&nbsp;年&nbsp;0&nbsp;月&nbsp;00&nbsp;日&nbsp;<span class="weekday">星期一</span><br><span class="time-text">00:00:00</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 分割线 -->
+                            <div class="line">
+                                <i class="fa-solid fa-link"></i>
+                                <span class="line-text">日记概览</span>
+                            </div>
+                            <!--日记内容-->
+                            <table class="link" id="link">
+                                <!-- 第一组 -->
+                                <tr class="rowt">
+                                    <th class="colt">
+                                        <div class="link-card cards">
+                                            <div class="message">Content 1
+                                            </div>
+                                            <div class="date">Date 1</div>
+                                        </div>
+                                    </th>
+                                    <th class="colt">
+                                        <div class="link-card cards">
+                                            <div class="message">Content 2
+                                            </div>
+                                            <div class="date">Date 2</div>
+                                        </div>
+                                    </th>
+                                    <th class="colt">
+                                        <div class="link-card cards">
+                                            <div class="message">Content 3
+                                            </div>
+                                            <div class="date">Date 3</div>
+                                        </div>
+                                    </th>
+                                </tr>
+                                <!-- 第二组 -->
+                                <tr class="rowt">
+                                    <th class="colt">
+                                        <div class="link-card cards">
+                                            <div class="message">Content 4
+                                            </div>
+                                            <div class="date">Date 4</div>
+                                        </div>
+                                    </th>
+                                    <th class="colt">
+                                        <div class="link-card cards">
+                                            <div class="message">Content 5
+                                            </div>
+                                            <div class="date">Date 5</div>
+                                        </div>
+                                    </th>
+                                    <th class="colt">
+                                        <div class="link-card cards">
+                                            <div id="record" class="add">+</div>
+                                            <script src="./public/api/write.js"></script>
+                                        </div>
+                                    </th>
+                                </tr>
+                            </table>
+                            <script src="./public/api/diary.js"></script>
+                        </div>
+                    </div>
+                    <div id="lrc"></div>
+                </div>
+                <!-- 版权信息 -->
+                <footer id="footer" class="fixed-bottom footer">
+                    <!-- 以下信息请不要修改哦 -->
+                    ⚙Modified from&nbsp;<a href="/" target="_blank">imsyy</a> 🔒
+                    <!-- <a href="https://beian.miit.gov.cn/">暂未备案</a> -->
+                    <!-- 歌词显示 -->
+                </footer>
+            </div>
+        </div>
+    </section>
+    <script type="text/javascript" src="./public/api/index.js"></script>
+</body>
+
+</html>

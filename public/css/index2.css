@@ -1,0 +1,306 @@
+/* 全局样式 */
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #333;
+    /* 隐藏元素超出其容器的部分 */
+    overflow: hidden;
+    /* 设置字体，首先使用 */
+    font-family: 'HarmonyOS_Regular', sans-serif;
+}
+
+
+/* *是全局选择器 */
+
+*,
+a,
+p {
+    /* 移除文本装饰 */
+    text-decoration: none;
+    /* 过渡效果持续0.3秒 */
+    transition: 0.3s;
+    color: #efefef;
+    /* 禁止用户选择文本内容 */
+    /* user-select: none; */
+    /* 设置自定义鼠标指针图标 */
+    cursor: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8' width='10px' height='10px'><circle cx='4' cy='4' r='4' fill='white' /></svg>") 4 4, auto !important;
+}
+
+body {
+    background: url("../../public/images/bk22.png") no-repeat center center fixed;
+    /* backdrop-filter: blur(10px); */
+    /*兼容浏览器版本*/
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+a:hover {
+    color: white;
+}
+
+
+/* 卡片样式 */
+
+.cards {
+    transition: 0.5s;
+}
+
+.cards:hover {
+    transform: scale(1.01);
+    transition: 0.5s;
+}
+
+.cards:active {
+    transform: scale(0.95);
+    transition: 0.5s;
+}
+
+.noscript {
+    z-index: 999999;
+    font-size: 0.95rem;
+    text-align: center;
+    margin: 14px 0px;
+}
+
+
+/* 鼠标指针 */
+
+#g-pointer-1 {
+    display: none;
+}
+
+#g-pointer-2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 18px;
+    height: 18px;
+    transition: 0.05s linear;
+    pointer-events: none;
+    background: #ffffff40;
+    border-radius: 50%;
+    z-index: 9999999;
+}
+
+
+/* 页面样式 */
+
+section {
+    /* 块级元素，独占一行，自动填充父容器宽度 */
+    display: block;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    /* 最小高度 */
+    min-height: 600px;
+    /* 元素缩放到原始大小1.1倍 */
+    transform: scale(1.10);
+    /* 元素过渡时间 */
+    transition: ease 1.25s;
+}
+
+main {
+    width: 100%;
+    height: 100%;
+    /* 透明度 */
+    background: rgb(0 0 0 / 20%);
+    display: flex;
+    /* align-items: center; */
+}
+
+.container {
+    width: 100%;
+    display: flex;
+    /* 每个元素周围放置相等的空间 */
+    justify-content: space-around;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    /* 水平间距为0,优先 */
+    --bs-gutter-x: 0 !important;
+}
+
+
+/* 具有col和2类名的元素 */
+
+.col {
+    /* 左右外边距 */
+    margin: 0 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-left {
+    /*transform: translateY(240px);*/
+    transform: translateY(-10px);
+    height: auto;
+}
+
+.main-right {
+    /*transform: translateY(240px);*/
+    transform: translateY(-10px);
+    height: auto;
+}
+
+.row.rightone {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.calendar {
+    width: 550px;
+    height: auto;
+    background: rgb(0 0 0 / 25%);
+    /* backdrop-filter: blur(10px); */
+    padding: 20px;
+    border-radius: 6px;
+}
+
+#calendar {
+    width: 100%;
+    height: auto;
+}
+
+
+/* 漂流瓶 */
+
+.col.pick {
+    margin-right: 0.75rem;
+}
+
+.bottle {
+    display: table;
+    /* 保持表格布局 */
+    width: 100%;
+    border-collapse: collapse;
+    /* 合并边框 */
+}
+
+.link-card {
+    height: 100px;
+    width: 200px;
+    border-radius: 6px;
+    background: rgb(0 0 0 / 25%);
+    /* backdrop-filter: blur(10px); */
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+    overflow: hidden;
+    /* 设置溢出隐藏 */
+    font-size: 1rem;
+    /* white-space: nowrap; */
+    /* 不换行 */
+    text-overflow: ellipsis;
+    /* 文本溢出显示省略号 */
+    padding: 10px;
+    box-sizing: border-box;
+    /* 确保 padding 不会增加单元格的实际宽度 */
+}
+
+.link-card:hover {
+    background: rgb(0 0 0 / 40%);
+    transition: 0.5s;
+}
+
+.rowt {
+    display: flex;
+    /* 使用 flexbox 布局 */
+    justify-content: space-between;
+    /* 使单元格均匀分布 */
+    margin-top: 10px;
+    /* 顶部间距 */
+}
+
+.colt {
+    flex: 1;
+    /* 填充剩余空间 */
+    padding: 10px;
+}
+
+.link-card .message {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.link-card .date {
+    display: none;
+}
+
+.link-card {
+    margin-top: 5px;
+    font-size: 12px;
+}
+
+.link-card:hover .message {
+    display: none;
+}
+
+.link-card:hover .date {
+    display: block;
+}
+
+.date {
+    margin-top: 5px;
+    font-size: 12px;
+}
+
+.message {
+    font-size: 15px;
+}
+
+
+/*分割线*/
+
+.line {
+    margin: 1rem 0.25rem;
+    margin-top: 2rem;
+    font-size: 1.10rem;
+    display: flex;
+    align-items: center;
+}
+
+span.line-text {
+    font-size: 1.2rem;
+    margin: 0px 6px;
+}
+
+i.iconfont.icon-link {
+    font-size: 1.2rem;
+}
+
+
+/*页脚样式*/
+
+footer {
+    text-align: center;
+    height: 46px;
+    backdrop-filter: blur(10px);
+    background: rgb(0 0 0 / 25%);
+}
+
+
+/* 小于400px时 */
+
+@media (max-width: 800px) {
+    .row {
+        align-items: start;
+        width: 100%;
+        /* 竖直间距为0,优先 */
+        --bs-gutter-y: 0 !important;
+    }
+    .main-left {
+        margin-top: 20px;
+    }
+}

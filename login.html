@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登录</title>
+    <style>
+        /* 整体背景 */
+        body{
+            position: relative;
+            display: flex;
+            background-image: url("./images/register_bk.jpg");
+            /* background-color: #e5f7f9; */
+            /* 背景覆盖 */
+            background-size: cover;
+            /* 居中 */
+            background-position: center;
+            /* 防止重复 */
+            background-repeat: no-repeat;
+            /* 元素高度为视口高度 */
+            height: 100vh;
+            margin: 0;
+            /* 内容居中 */
+            align-items: center;
+        }
+        form{
+            position: relative;
+            width: 100%;
+            height: 100%;
+            align-items: center;
+            margin: 0;
+            display: flex;
+        }
+        /* 登录大方框 */
+        .box1{
+            position: relative;
+            /* 宽高 */
+            width: 50%;
+            height: 60%;
+            /* 边距 */
+            margin-left: 25%;
+            /* 边框线 */
+            border: 1px solid #fff;
+            border-radius: 10px 10px 10px 10px;
+            /* 边框线阴影 */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            /* 子元素排列 */
+            display: flex;
+            flex-direction: column;
+            /* 子元素居中 */
+            align-items: center;
+            /* 背景滤镜模糊 */
+            backdrop-filter: blur(3px);
+        }
+        #Avatar{
+            position: absolute;
+            align-items: center;
+            display: flex;
+            margin-top: 10px;
+        }
+        /* 头像框 */
+        .avatar{
+            /* 宽高 */
+            width: 100px;
+            height: 100px;
+            /* 边距 */
+            margin-top: 25px;
+            /* 边框线 */
+            /* border: 2px solid #fff; */
+            border-bottom: none;
+            /* 圆形边框 */
+            border-radius: 50%;
+            /* 图片效果 */
+            object-fit: cover;
+        }
+        .hidden{
+            display: none;
+        }
+        /* 分割线 */
+        hr{
+            position: absolute;
+            /* 宽高 */
+            width: 100%;
+            /* 粗细颜色 */
+            border: 1px solid #fff;
+            border-top: none;
+            /* 边距 */
+            margin-top: 160px;
+        }
+        /* 登录大盒子 */
+        .register{
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            /* 宽高 */
+            width: 100%;
+            height: 300px;
+            /* 边距 */
+            margin-top: 200px;
+            /* 子元素居中 */
+            align-items: center;
+        }
+        /* 登录标题 */
+        h2{
+            /* 边距 */
+            margin-top: 10px;
+            /* 颜色 */
+            color: #fff;
+        }
+        .form_2{
+            position: relative;
+            /* 宽高 */
+            width: 70%;
+            height: 200px;
+            /* 边距 */
+            margin: 0;
+            /* 子元素排列 */
+            align-items: center;
+        }
+        /* 用户名盒子 */
+        #Name{
+            position: absolute;
+            /* 宽高 */
+            width: 95%;
+            height: 30px;
+            /* 背景 */
+            background-color: #fff;
+            /* 边距 */
+            margin-top: 10px;
+            padding-left: 15px;
+            /* 边框 */
+            border: none;
+            border-radius: 15px;
+        }
+        /* 用户名输入框文字 */
+        input ::placeholder{
+            color: #ccc;
+        }
+        /* 密码盒子 */
+        #Key{
+            position: absolute;
+            /* 宽高 */
+            width: 95%;
+            height: 30px;
+            /* 背景 */
+            background-color: #fff;
+            /* 边距 */
+            margin-top: 70px;
+            padding-left: 15px;
+            /* 边框 */
+            border: none;
+            border-radius: 15px;
+        }
+        /* 忘记密码盒子 */
+        .forget{
+            position: absolute;
+            display: flex;
+            /* 宽高 */
+            width: 100%;
+            height: 30px;
+            /* 边距 */
+            margin-top: 120px;
+            align-content: center;
+            /* 元素排列 */
+            flex-direction: row;
+            justify-content: space-between;
+            /* 文字 */
+            color: #fff;
+        }
+        /* 忘记密码文字 */
+        .forget .l{
+            margin-left: 10px;
+        }
+        .forget .r{
+            margin-right: 10px;
+        }
+        /* 登录盒子 */
+        .register button{
+            position: absolute;
+            /* 宽高 */
+            width: 100%;
+            height: 30px;
+            /* 背景 */
+            background-color: #3a4f6a;
+            /* 边距 */
+            margin-top: 170px;
+            /* 边框 */
+            border-radius: 15px;
+            border: none;
+            /* 文字 */
+            color: #fff;
+        }    
+        /* 动态 */
+        @media screen and (min-width:900px){
+            .box1{
+                flex-direction: row;
+                justify-content: center;
+                vertical-align: auto;
+            }
+            #Avatar{
+                position: relative;
+                width: 35%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-left:0;
+            }
+            .avatar{
+                position: absolute;
+                width: 100px;
+                height: 100px;
+            }
+            hr{
+                display: none;
+            }
+            .vertical-hr{
+                position: relative;
+                height: 100%;
+                width: 1px;
+                margin-left: 0;
+                background-color: #fff;
+            }
+            .register{
+                position: relative;
+                margin: 0;
+                width: 65%;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <form id="form">
+        <div class="box1">
+            <label id="Avatar">
+                <svg t="1720941089257"  class="avatar" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="3263" width="200" height="200"><path d="M958.2 324.7c-24.3-57.5-59.2-109.2-103.5-153.6-44.4-44.4-96-79.2-153.6-103.5-59.6-25.2-122.9-38-188.1-38s-128.5 12.8-188.1 38c-57.5 24.3-109.2 59.2-153.6 103.5-44.4 44.4-79.2 96-103.5 153.6-25.2 59.6-38 122.9-38 188.1s12.8 128.5 38 188.1c24.3 57.5 59.2 109.2 103.5 153.6 44.4 44.4 96 79.2 153.6 103.5 59.6 25.2 122.9 38 188.1 38s128.5-12.8 188.1-38c57.5-24.3 109.2-59.2 153.6-103.5s79.2-96 103.5-153.6c25.2-59.6 38-122.9 38-188.1s-12.8-128.5-38-188.1zM513 924c-226.7 0-411.2-184.5-411.2-411.2S286.3 101.6 513 101.6s411.2 184.5 411.2 411.2S739.7 924 513 924z" p-id="3264" fill="#ffffff"></path><path d="M694.9 624.2c-18.9-6.2-39.2 4.1-45.4 23-19.3 59.1-74.1 98.8-136.4 98.8-59.3 0-113.2-37.2-134.2-92.7-7-18.6-27.8-28-46.4-20.9-18.6 7-28 27.8-20.9 46.4 15.3 40.5 42.2 75.1 77.7 100.1 36.4 25.6 79.2 39.1 123.8 39.1 46.3 0 90.5-14.5 127.7-41.9 36.4-26.9 63.1-63.7 77.1-106.5 6.2-18.9-4.1-39.2-23-45.4zM350 554.1c19.9 0 36-16.1 36-36V334.4c0-19.9-16.1-36-36-36s-36 16.1-36 36v183.7c0 19.9 16.1 36 36 36zM674.1 554.1c19.9 0 36-16.1 36-36V334.4c0-19.9-16.1-36-36-36s-36 16.1-36 36v183.7c0 19.9 16.1 36 36 36z" p-id="3265" fill="#ffffff"></path></svg>
+            </label>
+            <div class="vertical-hr"></div>
+            <hr>
+            <div class="register">
+                <h2>登录</h2>
+                <div class="form_2">
+                    <input type="text" id="Name" name="Name" placeholder="用户名" />
+                    <input type="text" id="Key" name="Key" placeholder="密码" />
+                    <div class="forget">
+                        <p class="l">注册</p>
+                        <p class="r">忘记密码</p>
+                    </div>
+                    <script type="module" src="./public/api/login.js"></script>
+                    <button type="submit">登录</button>
+                </div>
+            </div>
+    </form>
+</body>
+</html>

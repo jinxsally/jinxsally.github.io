@@ -1,0 +1,21 @@
+{
+  "name": "jinxsally",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "serve": "node ./server/app.js"
+  },
+  "devDependencies": {
+    "vite": "^5.3.1"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "echarts": "^5.5.1",
+    "express": "^4.19.2",
+    "fullcalendar": "^6.1.15",
+    "multiparty": "^4.2.3"
+  }
+}
